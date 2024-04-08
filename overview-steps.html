@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports  - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>No Name (add projectName to cucumber-reporting.properties)</td>
+      <td>08 Apr 2024, 17:34</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">StepDefinitions.Hooks.beforeScenario()</td>
+              <td>3</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.Customer_Checks_the_termsandcondition_and_click_on_signup()</td>
+              <td>1</td>
+              <td class="duration" data-value="2194000000">2.194</td>
+              <td class="duration" data-value="2194000000">2.194</td>
+              <td class="duration" data-value="2194000000">2.194</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.customer_clicks_on_proceed_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="2210000000">2.210</td>
+              <td class="duration" data-value="2210000000">2.210</td>
+              <td class="duration" data-value="2210000000">2.210</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.customer_clicks_on_sign_up_login()</td>
+              <td>1</td>
+              <td class="duration" data-value="2091000000">2.091</td>
+              <td class="duration" data-value="2091000000">2.091</td>
+              <td class="duration" data-value="2091000000">2.091</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.customer_enter_the_mobileno_to_register_with(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="584000000">0.584</td>
+              <td class="duration" data-value="584000000">0.584</td>
+              <td class="duration" data-value="584000000">0.584</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.customer_enters_the_received_otp_on_the_registred_mobile_number()</td>
+              <td>1</td>
+              <td class="duration" data-value="2168000000">2.168</td>
+              <td class="duration" data-value="2168000000">2.168</td>
+              <td class="duration" data-value="2168000000">2.168</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.customer_is_on_the_home_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="22669000000">22.669</td>
+              <td class="duration" data-value="22669000000">22.669</td>
+              <td class="duration" data-value="22669000000">22.669</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.SignupStepdefination.customer_will_land_on_the_dashboard_and_user_logout()</td>
+              <td>1</td>
+              <td class="duration" data-value="12838000000">12.838</td>
+              <td class="duration" data-value="12838000000">12.838</td>
+              <td class="duration" data-value="12838000000">12.838</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.alert_popup_is_displayed_and_click_on_ok()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.checker_clicks_on_profile_and_logout()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.checker_is_redirected_to_customer_approval_and_click_on_accept_request()</td>
+              <td>1</td>
+              <td class="duration" data-value="5867000000">5.867</td>
+              <td class="duration" data-value="5867000000">5.867</td>
+              <td class="duration" data-value="5867000000">5.867</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.checker_is_redirected_to_customer_approval_table_and_now_the_final_status_is_changed_to_approved_for_the_concer_customer()</td>
+              <td>1</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="duration" data-value="0">0.000</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.checker_login_with_the_username_and_password_and_click_on_sign_me_in()</td>
+              <td>1</td>
+              <td class="duration" data-value="3203000000">3.203</td>
+              <td class="duration" data-value="3203000000">3.203</td>
+              <td class="duration" data-value="3203000000">3.203</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.checker_select_industry_isic_code_and_click_on_approve_or_deny()</td>
+              <td>1</td>
+              <td class="duration" data-value="5277000000">5.277</td>
+              <td class="duration" data-value="5277000000">5.277</td>
+              <td class="duration" data-value="5277000000">5.277</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.checker_will_be_landed_on_dashboard_and_clicks_on_notification()</td>
+              <td>1</td>
+              <td class="duration" data-value="4343000000">4.343</td>
+              <td class="duration" data-value="4343000000">4.343</td>
+              <td class="duration" data-value="4343000000">4.343</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.clicking_on_notfication_the_maker_status_has_changed_from_pending_to_approved()</td>
+              <td>1</td>
+              <td class="duration" data-value="3176000000">3.176</td>
+              <td class="duration" data-value="3176000000">3.176</td>
+              <td class="duration" data-value="3176000000">3.176</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_checks_for_the_pending_e_kyc_request_and_click_on_the_notification()</td>
+              <td>1</td>
+              <td class="duration" data-value="9606000000">9.606</td>
+              <td class="duration" data-value="9606000000">9.606</td>
+              <td class="duration" data-value="9606000000">9.606</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_clicks_on_sign_me_in()</td>
+              <td>1</td>
+              <td class="duration" data-value="1290000000">1.290</td>
+              <td class="duration" data-value="1290000000">1.290</td>
+              <td class="duration" data-value="1290000000">1.290</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_clicks_on_the_notification_icon()</td>
+              <td>1</td>
+              <td class="duration" data-value="1131000000">1.131</td>
+              <td class="duration" data-value="1131000000">1.131</td>
+              <td class="duration" data-value="1131000000">1.131</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_is_on_login_page()</td>
+              <td>1</td>
+              <td class="duration" data-value="35631000000">35.631</td>
+              <td class="duration" data-value="35631000000">35.631</td>
+              <td class="duration" data-value="35631000000">35.631</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_is_redirected_to_customer_apporval_page_and_view_all_the_details_wrt_to_customer()</td>
+              <td>1</td>
+              <td class="duration" data-value="3538000000">3.538</td>
+              <td class="duration" data-value="3538000000">3.538</td>
+              <td class="duration" data-value="3538000000">3.538</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_login_with_username_and_password()</td>
+              <td>1</td>
+              <td class="duration" data-value="2136000000">2.136</td>
+              <td class="duration" data-value="2136000000">2.136</td>
+              <td class="duration" data-value="2136000000">2.136</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_logout_clicking_on_profile()</td>
+              <td>1</td>
+              <td class="duration" data-value="2086000000">2.086</td>
+              <td class="duration" data-value="2086000000">2.086</td>
+              <td class="duration" data-value="2086000000">2.086</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.maker_select_the_industry_isic_code_of_customer_and_click_on_approve()</td>
+              <td>1</td>
+              <td class="duration" data-value="2487000000">2.487</td>
+              <td class="duration" data-value="2487000000">2.487</td>
+              <td class="duration" data-value="2487000000">2.487</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.select_the_pending_approval_request()</td>
+              <td>1</td>
+              <td class="duration" data-value="2164000000">2.164</td>
+              <td class="duration" data-value="2164000000">2.164</td>
+              <td class="duration" data-value="2164000000">2.164</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCApprovalStepdefination.the_maker_will_accept_the_request_if_all_requirements_are_met_accordingly()</td>
+              <td>1</td>
+              <td class="duration" data-value="3607000000">3.607</td>
+              <td class="duration" data-value="3607000000">3.607</td>
+              <td class="duration" data-value="3607000000">3.607</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_capture_its_selfie_and_click_on_submit_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="5782000000">5.782</td>
+              <td class="duration" data-value="5782000000">5.782</td>
+              <td class="duration" data-value="5782000000">5.782</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_click_on_my_profile_and_then_clicks_on_complete_your_e_kyc()</td>
+              <td>1</td>
+              <td class="duration" data-value="9815000000">9.815</td>
+              <td class="duration" data-value="9815000000">9.815</td>
+              <td class="duration" data-value="9815000000">9.815</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_e_kyc_status_changes_from_incomplete_to_advanced_resident()</td>
+              <td>1</td>
+              <td class="duration" data-value="2043000000">2.043</td>
+              <td class="duration" data-value="2043000000">2.043</td>
+              <td class="duration" data-value="2043000000">2.043</td>
+              <td class="failed">0.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_enter_the_reccieved_otp_and_click_on_login_buttom()</td>
+              <td>1</td>
+              <td class="duration" data-value="3190000000">3.190</td>
+              <td class="duration" data-value="3190000000">3.190</td>
+              <td class="duration" data-value="3190000000">3.190</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_entres_registred_mobilenumber_and_click_on_procced_button(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="5031000000">5.031</td>
+              <td class="duration" data-value="5031000000">5.031</td>
+              <td class="duration" data-value="5031000000">5.031</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_is_on_login_page_and_signing_in()</td>
+              <td>1</td>
+              <td class="duration" data-value="27340000000">27.340</td>
+              <td class="duration" data-value="27340000000">27.340</td>
+              <td class="duration" data-value="27340000000">27.340</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.customer_upload_his_eid_and_click_on_proceed_button()</td>
+              <td>1</td>
+              <td class="duration" data-value="4181000000">4.181</td>
+              <td class="duration" data-value="4181000000">4.181</td>
+              <td class="duration" data-value="4181000000">4.181</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">StepDefinitions.eKYCStepdefination.the_customer_fills_all_the_mandatory_field_and_click_on_the_proceed_button(java.lang.String)</td>
+              <td>1</td>
+              <td class="duration" data-value="6364000000">6.364</td>
+              <td class="duration" data-value="6364000000">6.364</td>
+              <td class="duration" data-value="6364000000">6.364</td>
+              <td class="passed">100.00%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>34</td>
+            <td>36</td>
+            <td class="duration">5.390</td>
+            <td class="duration">35.631</td>
+            <td class="duration">3:14.042</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
